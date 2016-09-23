@@ -15,6 +15,6 @@ public class StylistTest {
   @Test
   public void stylist_instantiatesCorrectly_true() {
     Stylist testStylist = new Stylist("Xena");
-    assertEquals(true, testStylist instanceof Stylist);
+    assertTrue(testStylist instanceof Stylist);
   }
 }

@@ -26,9 +26,9 @@ _To run app locally:_
 * _If the app doesn't initialize in the browser, contact me!_
 
 _To recreate the hair-salon database in PSQL:_
-* _CREATE DATABASE to_do;_
-* _CREATE TABLE categories (id serial PRIMARY KEY, name varchar);_
-* _CREATE TABLE tasks (id serial PRIMARY KEY, description varchar);_
+* _CREATE DATABASE hair-salon;_
+* _CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, description varchar);_
+* _CREATE TABLE clients (id serial PRIMARY KEY, name varchar, description varchar);_
 
 ## User Stories
 
