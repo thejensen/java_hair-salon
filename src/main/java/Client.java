@@ -6,10 +6,12 @@ public class Client {
   private String name;
   private String description;
   private int id;
+  private int stylistId;
 
-  public Client(String name, String description) {
+  public Client(String name, String description, int stylistId) {
     this.name = name;
     this.description = description;
+    this.stylistId = stylistId;
   }
 
   public String getName() {
@@ -23,6 +25,8 @@ public class Client {
   public int getId() {
     return id;
   }
+
+  public int 
 
   @Override
   public boolean equals(Object otherClient) {

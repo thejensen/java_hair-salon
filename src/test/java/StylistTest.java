@@ -9,12 +9,64 @@ public class StylistTest {
 
   @Before
   public void setUp(){
-    stylist = new Stylist("Xena");
+    stylist = new Stylist("Xena", "Straightforward, elegant style");
   }
 
   @Test
   public void stylist_instantiatesCorrectly_true() {
-    Stylist testStylist = new Stylist("Xena");
-    assertTrue(testStylist instanceof Stylist);
+    assertTrue(stylist instanceof Stylist);
   }
+
+  @Test
+  public void getName_returnsNameOfStylist_String() {
+    assertEquals("Xena", stylist.getName());
+  }
+
+  @Test
+  public void getDescription_returnsDescriptionOfStylist_String() {
+    assertEquals("Straightforward, elegant style", stylist.getDescription());
+  }
+
+  @Test
+  public void equals_returnsTrueIfPropertiesAreTheSame_true() {
+    Stylist secondStylist = new Stylist("Xena", "Straightforward, elegant style");
+    assertTrue(stylist.equals(secondStylist));
+  }
+
+  @Test
+  public void save_savesObjectToDatabase_true(){
+    stylist.save();
+    String sql = "SELECT * FROM stylists WHERE name='Xena'";
+    Stylist secondStylist;
+    try(Connection con = DB.sql2o.open()){
+      secondStylist = con.createQuery(sql).executeAndFetchFirst(Stylist.class);
+    }
+    assertTrue(stylist.equals(secondStylist));
+  }
+
+  @Test
+  public void getId_returnsIdOfStylist_true() {
+    stylist.save();
+    assertTrue(stylist.getId() > 0);
+  }
+
+  @Test
+  public void all_returnsAllInstancesOfStylist_true(){
+    stylist.save();
+    Stylist secondStylist = new Stylist("Hercules", "Specializes in wavy layers");
+    secondStylist.save();
+    assertTrue(Stylist.all().contains(stylist));
+    assertTrue(Stylist.all().contains(secondStylist));
+  }
+
+  @Test
+  public void find_returnsStylistWithSameId_secondStylist() {
+    stylist.save();
+    Stylist secondStylist = new Stylist("Hercules", "Specializes in wavy layers");
+    secondStylist.save();
+    assertEquals(Stylist.find(secondStylist.getId()), secondStylist);
+  }
+
+
+
 }
