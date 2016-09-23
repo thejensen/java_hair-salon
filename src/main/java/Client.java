@@ -1,3 +1,5 @@
+import java.util.List;
+import java.util.ArrayList;
 import org.sql2o.*;
 
 public class Client {
@@ -43,5 +45,21 @@ public class Client {
     }
   }
 
+  public static List<Client> all(){
+    String sql = "SELECT * FROM clients";
+    try(Connection con = DB.sql2o.open()){
+      return con.createQuery(sql).executeAndFetch(Client.class);
+    }
+  }
+
+  public static Client find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM clients where id=:id";
+      Client client = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetchFirst(Client.class);
+      return client;
+    }
+  }
 
 }
