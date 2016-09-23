@@ -7,11 +7,13 @@
 ## Description
 
 _**The owner of the hair salon may add a list of stylists, and for each stylist, add clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist.**_
-_Further Development:
+
+## Future Development 
+
 * Include a form where users may search for a stylist by name. Use a SQL query to perform the database search, then display a list of all results.
 * Include a form where users may also search for a client by name. Use a SQL query to perform the database search, then display a list of all results.
 * Add a <select> drop down field that allows a user to select which Stylist a Client belongs to.
-* Add a detail view page for each Client. Include additional properties to record additional notes and details the salon may want to record about each Client._
+* Add a detail view page for each Client. Include additional properties to record additional notes and details the salon may want to record about each Client.
 
 ## Setup/Installation Requirements
 
