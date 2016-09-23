@@ -8,13 +8,6 @@
 
 _**The owner of the hair salon may add a list of stylists, and for each stylist, add clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist.**_
 
-## Future Development
-
-* _Include a form where users may search for a stylist by name. Use a SQL query to perform the database search, then display a list of all results._
-* _Include a form where users may also search for a client by name. Use a SQL query to perform the database search, then display a list of all results._
-* _Add a <select> drop down field that allows a user to select which Stylist a Client belongs to._
-* _Add a detail view page for each Client. Include additional properties to record additional notes and details the salon may want to record about each Client._
-
 ## Setup/Installation Requirements
 
 _To run app locally:_
@@ -66,6 +59,13 @@ _If you run into any issues, have questions, ideas or concerns, or want to make 
 ## Technologies Used
 
 _Java, Spark, Velocity, jUnit, Postgres/PSQL._
+
+## Future Development
+
+* _Include a form where users may search for a stylist by name. Use a SQL query to perform the database search, then display a list of all results._
+* _Include a form where users may also search for a client by name. Use a SQL query to perform the database search, then display a list of all results._
+* _Add a <select> drop down field that allows a user to select which Stylist a Client belongs to._
+* _Add a detail view page for each Client. Include additional properties to record additional notes and details the salon may want to record about each Client._
 
 ### License
 

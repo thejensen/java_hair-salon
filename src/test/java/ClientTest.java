@@ -9,7 +9,7 @@ public class ClientTest {
 
   @Before
   public void setUp(){
-    client = new Client("Gabrielle", "Sunflower blonde color, every 6 months");
+    client = new Client("Gabrielle", "Sunflower blonde color, every 6 months", 1);
   }
 
   @Test
@@ -29,7 +29,7 @@ public class ClientTest {
 
   @Test
   public void equals_returnsTrueIfPropertiesAreTheSame_true() {
-    Client secondClient = new Client("Gabrielle", "Sunflower blonde color, every 6 months");
+    Client secondClient = new Client("Gabrielle", "Sunflower blonde color, every 6 months", 1);
     assertTrue(client.equals(secondClient));
   }
 
@@ -53,7 +53,7 @@ public class ClientTest {
   @Test
   public void all_returnsAllInstancesOfClient_true(){
     client.save();
-    Client secondClient = new Client("Hades", "Raven black hair, every 1 month, likes a lot of gel");
+    Client secondClient = new Client("Hades", "Raven black hair, every 1 month, likes a lot of gel", 2);
     secondClient.save();
     assertTrue(Client.all().contains(client));
     assertTrue(Client.all().contains(secondClient));
@@ -62,14 +62,14 @@ public class ClientTest {
   @Test
     public void find_returnsClientWithSameId_secondClient() {
       client.save();
-      Client secondClient = new Client("Hades", "Raven black hair, every 1 month, likes a lot of gel");
+      Client secondClient = new Client("Hades", "Raven black hair, every 1 month, likes a lot of gel", 2);
       secondClient.save();
       assertEquals(Client.find(secondClient.getId()), secondClient);
     }
 
   @Test
   public void getStylistId_returnsStylistId_int() {
-
+    assertEquals(1, client.getStylistId());
   }
 
 
