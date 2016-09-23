@@ -1,0 +1,13 @@
+<h1>Stylist Profile</h1>
+<hr>
+<h4>Name: $stylist.getName()</h4>
+<h5>Specialty: $stylist.getDescription()</h5>
+<h5><a href="/stylist/$stylist.getId()/client/new">Add Client for $stylist.getName()</h5>
+<p>
+  #foreach ($client in $clients)
+    <ul>
+      <li>$client.getName() | $client.getdescription()</li>
+    </ul>
+  #end
+</p>
+<h4><a href="/">Home</a></h4>

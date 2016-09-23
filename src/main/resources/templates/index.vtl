@@ -1,1 +1,15 @@
-<h1>Super Heroine Salon</h1>
+<h1>A Comedy of Eros Hair Salon</h1>
+<h4>For hair that will make all the wrong people fall in love with you.</h4>
+<hr>
+#if($success)
+  $success has been added! --Xena
+#end
+<h5><a href="/stylist/new">Add Stylist</h5>
+<h2>Our Stylists</h2>
+<h4>
+  #foreach ($stylist in $stylists)
+    <ul>
+      <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+    </ul>
+  #end
+</h4>

@@ -67,6 +67,17 @@ public class StylistTest {
     assertEquals(Stylist.find(secondStylist.getId()), secondStylist);
   }
 
+  @Test
+  public void getClients_retrievesAllClientsWithStylistId_clientList(){
+    stylist.save();
+    Client client = new Client("Boxer", "Bowlcut trim every 2 weeks", stylist.getId());
+    client.save();
+    Client secondClient = new Client("Lala", "Lala", stylist.getId());
+    secondClient.save();
+    Client[] clients = new Client[] {client, secondClient};
+    assertTrue(stylist.getClients().containsAll(Arrays.asList(clients)));
+  }
+
 
 
 }
