@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="StylistTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-09-23T22:32:08" hostname="MacBook-Pro.local" time="0.123">
+<testsuite name="StylistTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-09-25T19:12:20" hostname="MacBook-Pro.domain" time="0.133">
   <properties/>
-  <testcase name="getId_returnsIdOfStylist_true" classname="StylistTest" time="0.014"/>
-  <testcase name="stylist_instantiatesCorrectly_true" classname="StylistTest" time="0.008"/>
-  <testcase name="all_returnsAllInstancesOfStylist_true" classname="StylistTest" time="0.037"/>
-  <testcase name="save_savesObjectToDatabase_true" classname="StylistTest" time="0.022"/>
+  <testcase name="getId_returnsIdOfStylist_true" classname="StylistTest" time="0.012"/>
+  <testcase name="stylist_instantiatesCorrectly_true" classname="StylistTest" time="0.006"/>
+  <testcase name="all_returnsAllInstancesOfStylist_true" classname="StylistTest" time="0.032"/>
+  <testcase name="save_savesObjectToDatabase_true" classname="StylistTest" time="0.017"/>
+  <testcase name="getClients_retrievesAllClientsWithStylistId_clientList" classname="StylistTest" time="0.028"/>
   <testcase name="find_returnsStylistWithSameId_secondStylist" classname="StylistTest" time="0.021"/>
-  <testcase name="getName_returnsNameOfStylist_String" classname="StylistTest" time="0.007"/>
-  <testcase name="equals_returnsTrueIfPropertiesAreTheSame_true" classname="StylistTest" time="0.006"/>
+  <testcase name="getName_returnsNameOfStylist_String" classname="StylistTest" time="0.005"/>
+  <testcase name="equals_returnsTrueIfPropertiesAreTheSame_true" classname="StylistTest" time="0.005"/>
   <testcase name="getDescription_returnsDescriptionOfStylist_String" classname="StylistTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

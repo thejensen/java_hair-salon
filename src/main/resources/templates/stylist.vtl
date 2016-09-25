@@ -1,13 +1,24 @@
-<h1>Stylist Profile</h1>
-<hr>
-<h4>Name: $stylist.getName()</h4>
-<h5>Specialty: $stylist.getDescription()</h5>
-<h5><a href="/stylist/$stylist.getId()/client/new">Add Client for $stylist.getName()</h5>
-<p>
-  #foreach ($client in $clients)
-    <ul>
-      <li>$client.getName() | $client.getdescription()</li>
-    </ul>
-  #end
-</p>
+<div class="jumbotron">
+  <h2>$stylist.getName()</h2>
+  <h4>$stylist.getDescription()</h4>
+</div>
+<h5><a href="/stylist/$stylist.getId()/client/new">Add Client for $stylist.getName()</a></h5>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Client Name</h3>
+      #foreach ($client in $clients)
+        <ul>
+          <li>$client.getName() | $client.getDescription()</li>
+        </ul>
+      #end
+  </div>
+  <div class="col-sm-6">
+    <h3>Special Requests</h3>
+      #foreach ($client in $clients)
+        <ul>
+          <li>$client.getDescription()</li>
+        </ul>
+      #end
+  </div>
+</div>
 <h4><a href="/">Home</a></h4>
