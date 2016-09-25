@@ -72,5 +72,12 @@ public class ClientTest {
     assertEquals(1, client.getStylistId());
   }
 
+  @Test
+  public void update_updatesDescriptionForClient_true() {
+    client.save();
+    client.update("A new do, don't care what");
+    assertEquals("A new do, don't care what", Client.find(client.getId()).getDescription());
+  }
+
 
 }

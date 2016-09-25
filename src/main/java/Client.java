@@ -69,5 +69,14 @@ public class Client {
     }
   }
 
+  public void update(String description) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE clients SET description=:description WHERE id=:id";
+      con.createQuery(sql)
+        .addParameter("id", id)
+        .addParameter("description", description)
+        .executeUpdate();
+    }
+  }
 
 }
