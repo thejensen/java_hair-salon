@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ClientTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-09-25T22:27:04" hostname="MacBook-Pro.domain" time="0.3">
+<testsuite name="ClientTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-09-26T06:01:30" hostname="MacBook-Pro.domain" time="0.318">
   <properties/>
-  <testcase name="save_savesObjectToDatabase_true" classname="ClientTest" time="0.148"/>
-  <testcase name="client_instantiatesCorrectly_true" classname="ClientTest" time="0.008"/>
-  <testcase name="getDescription_returnsDescriptionOfClient_String" classname="ClientTest" time="0.009"/>
-  <testcase name="all_returnsAllInstancesOfClient_true" classname="ClientTest" time="0.042"/>
-  <testcase name="getName_returnsNameOfClient_String" classname="ClientTest" time="0.008"/>
-  <testcase name="getId_returnsIdOfClient_true" classname="ClientTest" time="0.017"/>
-  <testcase name="equals_returnsTrueIfPropertiesAreTheSame_true" classname="ClientTest" time="0.009"/>
-  <testcase name="find_returnsClientWithSameId_secondClient" classname="ClientTest" time="0.027"/>
+  <testcase name="save_savesObjectToDatabase_true" classname="ClientTest" time="0.154"/>
+  <testcase name="client_instantiatesCorrectly_true" classname="ClientTest" time="0.007"/>
+  <testcase name="getDescription_returnsDescriptionOfClient_String" classname="ClientTest" time="0.008"/>
+  <testcase name="all_returnsAllInstancesOfClient_true" classname="ClientTest" time="0.041"/>
+  <testcase name="getName_returnsNameOfClient_String" classname="ClientTest" time="0.005"/>
+  <testcase name="getId_returnsIdOfClient_true" classname="ClientTest" time="0.012"/>
+  <testcase name="equals_returnsTrueIfPropertiesAreTheSame_true" classname="ClientTest" time="0.006"/>
+  <testcase name="delete_deletesClient_true" classname="ClientTest" time="0.025"/>
+  <testcase name="find_returnsClientWithSameId_secondClient" classname="ClientTest" time="0.021"/>
   <testcase name="getStylistId_returnsStylistId_int" classname="ClientTest" time="0.005"/>
-  <testcase name="update_updatesDescriptionForClient_true" classname="ClientTest" time="0.023"/>
+  <testcase name="update_updatesDescriptionForClient_true" classname="ClientTest" time="0.025"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,7 +1,32 @@
-h1 {
+/*.jumbotron {
+  text-align: center;
+  color: white;
+  background-image: url("../images/jumbotron_bg.jpg");
+}*/
+#scissors {
+  width: 50px;
+}
+
+.row {
+  background: #e6f7ff;
+  text-align: center;
+  padding: 5%
+}
+
+h1, h2, h4 {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+h3, p, label, button, li {
+  text-align: center;
+  font-family: 'Quattrocento', serif;
+}
+
+.add-client {
   text-align: center;
 }
 
-h3 {
-  text-align: center;
+ul {
+  list-style: none;
 }

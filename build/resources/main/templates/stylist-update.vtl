@@ -1,0 +1,13 @@
+<h2>Stylist Update | $stylist.getName()'s details</h2>
+<hr>
+
+<form action="/stylist/$stylist.getId()/update" method="post">
+  <label for="description">Description</label>
+  <input id="description" name="description" type="text" required>
+  <button type="submit" class="btn btn-info">Update Stylist Details</button>
+</form>
+<hr>
+<form action="/stylist/$stylist.getId()/delete" method="post">
+  <button type="submit" class="btn btn-danger" id="delete-stylist">Delete Stylist</button>
+</form>
+<hr>

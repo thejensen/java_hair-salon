@@ -1,7 +1,14 @@
-<h2>$client.getName()'s details</h2>
+<h2>$stylist.getName()'s Client Update | $client.getName()'s details</h2>
+<hr>
 
 <form action="/stylist/$client.getStylistId()/client/$client.getId()/update" method="post">
-  <label for="description">Description</label>
+  <label for="description">Update Special Requests/Other Details</label>
+  <p></p>
   <input id="description" name="description" type="text">
   <button type="submit" class="btn btn-info">Update Client Details</button>
 </form>
+<hr>
+<form action="/stylist/$client.getStylistId()/client/$client.getId()/delete" method="post">
+  <button type="submit" class="btn btn-danger" id="delete-client">Delete Client</button>
+</form>
+<hr>

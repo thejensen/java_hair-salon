@@ -60,12 +60,12 @@ public class ClientTest {
   }
 
   @Test
-    public void find_returnsClientWithSameId_secondClient() {
-      client.save();
-      Client secondClient = new Client("Hades", "Raven black hair, every 1 month, likes a lot of gel", 2);
-      secondClient.save();
-      assertEquals(Client.find(secondClient.getId()), secondClient);
-    }
+  public void find_returnsClientWithSameId_secondClient() {
+    client.save();
+    Client secondClient = new Client("Hades", "Raven black hair, every 1 month, likes a lot of gel", 2);
+    secondClient.save();
+    assertEquals(Client.find(secondClient.getId()), secondClient);
+  }
 
   @Test
   public void getStylistId_returnsStylistId_int() {
@@ -79,5 +79,11 @@ public class ClientTest {
     assertEquals("A new do, don't care what", Client.find(client.getId()).getDescription());
   }
 
-
+  @Test
+  public void delete_deletesClient_true() {
+    client.save();
+    int clientId = client.getId();
+    client.delete();
+    assertEquals(null, Client.find(clientId));
+  }
 }

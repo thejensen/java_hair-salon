@@ -50,7 +50,8 @@ _To recreate the hair-salon database in PSQL:_
 
 ## Known Bugs
 
-_No known bugs._
+* _Navbar content not available in mobile sizing._
+* _hair gallery photos misaligned in mobile sizing._
 
 ## Support and contact details
 
@@ -66,6 +67,7 @@ _Java, Spark, Velocity, jUnit, Postgres/PSQL._
 * _Include a form where users may also search for a client by name. Use a SQL query to perform the database search, then display a list of all results._
 * _Add a <select> drop down field that allows a user to select which Stylist a Client belongs to._
 * _Add a detail view page for each Client. Include additional properties to record additional notes and details the salon may want to record about each Client._
+* _Delete and update confirmation messages._
 
 ### License
 

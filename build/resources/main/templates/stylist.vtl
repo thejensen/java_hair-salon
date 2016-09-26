@@ -1,41 +1,41 @@
 <div class="jumbotron">
+  <hr>
   <h1>$stylist.getName()</h1>
   <h3>Specialty | $stylist.getDescription()</h3>
-  <h5><a href="/stylist/$stylist.getId()/client/new">Add Client for $stylist.getName()</a></h5>
+  <h4><a href="/stylist/$stylist.getId()/update">Edit $stylist.getName()</a></h4>
+  <hr>
 </div>
 
-<div class="row">
-  <div class="col-sm-2">
-    <h3>Client Name</h3>
-    #foreach ($client in $clients)
-      <ul>
-        <li>$client.getName()</li>
-      </ul>
-    #end
+#if($success-add)
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    $success-add's info has been added. -Xena
   </div>
-  <div class="col-sm-4">
-    <h3>Special Requests</h3>
-    #foreach ($client in $clients)
-      <ul>
-        <li>$client.getDescription()</li>
-      </ul>
-    #end
-  </div>
-  <div class="col-sm-3">
-    <h3>Edit</h3>
-    #foreach ($client in $clients)
-      <ul>
-        <li><a href="/stylist/$stylist.getId()/client/$client.getId()/update">Edit $client.getName()'s Details</a></li>
-      </ul>
-    #end
-  </div>
-  <div class="col-sm-3">
-    <h3>Delete</h3>
-    #foreach ($client in $clients)
-      <ul>
-        <li><a href="/stylist/$stylist.getId()/client/$client.getId()/delete">Remove $client.getName() from the record!</a></li>
-      </ul>
-    #end
-  </div>
+#end
+#if($success-update)
+<div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  $success-update's info has been updated. -Gabrielle
 </div>
-<h4><a href="/">Home</a></h4>
+#end
+#if($success-delete)
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    $success-delete's info has been deleted. -Hades
+  </div>
+#end
+
+<h1>Client List</h1>
+<h3><a href="/stylist/$stylist.getId()/client/new">Add Client</a></h3>
+<hr>
+<div class="row">
+  #foreach ($client in $clients)
+    <div class="col-sm-4">
+      <ul>
+        <li><h4>$client.getName()</a></h4></li>
+        <li>Requests | $client.getDescription()</li>
+        <li><a href="/stylist/$stylist.getId()/client/$client.getId()/update">Update $client.getName()'s Details</a></li>
+      </ul>
+    </div>
+  #end
+</div>
