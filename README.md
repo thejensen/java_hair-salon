@@ -13,7 +13,8 @@ _**The owner of the hair salon may add a list of stylists, and for each stylist,
 _To run app locally:_
 * _Make sure you have the Java Development Kit (JDK) and a Java Runtime Environment (JRE) installed._
 * _Install Gradle_
-* _Clone https://github.com/thejensen/java_dictionary to your desktop_
+* _Clone https://github.com/thejensen/java_hair-salon to your desktop_
+* _In terminal, navigate to java_hair-salon_
 * _In terminal, execute $gradle run_
 * _In your browser (preferably latest version of Chrome), go to localhost:4567._
 * _If the app doesn't initialize in the browser, contact me!_
