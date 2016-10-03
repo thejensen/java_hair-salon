@@ -1,4 +1,4 @@
-# _A Comedy of Eros | Hair Salon_
+# _fLawless | Hair Salon_
 
 #### _An app for hair salon employees to schedule clients, Sept 23, 2016_
 
@@ -15,14 +15,18 @@ _To run app locally:_
 * _Install Gradle_
 * _Clone https://github.com/thejensen/java_hair-salon to your desktop_
 * _In terminal, navigate to java_hair-salon_
-* _In terminal, execute $gradle run_
-* _In your browser (preferably latest version of Chrome), go to localhost:4567._
-* _If the app doesn't initialize in the browser, contact me!_
 
-_To recreate the hair-salon database in PSQL:_
-* _CREATE DATABASE hair-salon;_
+_Next, recreate the hair-salon database in PSQL:_
+* _Make sure postgres is running by executing $postgres, then..._
+* _$psql_
+* _CREATE DATABASE hair_salon;_
+* _\c hair_salon_
 * _CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, description varchar);_
-* _CREATE TABLE clients (id serial PRIMARY KEY, name varchar, description varchar);_
+* _CREATE TABLE clients (id serial PRIMARY KEY, name varchar, description varchar, stylist_id int);_
+
+_Finally, we can run the app by..._
+* _In a new terminal tab (or "ctrl c" out of psql) execute $gradle run_
+* _In your browser (preferably latest version of Chrome), go to localhost:4567._
 
 ## User Stories
 

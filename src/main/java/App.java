@@ -13,6 +13,7 @@ public class App {
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("stylists", Stylist.all());
+      model.put("orphanedClients", Stylist.getOrphanedClients());
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -46,7 +47,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Stylist stylist = Stylist.find(Integer.parseInt(request.params("id")));
       String description = request.queryParams("description");
-      stylist.update(description);
+      stylist.updateDescription(description);
       String url = String.format("/stylist/%d", stylist.getId());
       response.redirect(url);
       return null;
@@ -128,7 +129,7 @@ public class App {
       Client client = Client.find(Integer.parseInt(request.params("id")));
       Stylist stylist = Stylist.find(client.getStylistId());
       client.delete();
-      String url = String.format("/stylist/%d/", stylist.getId());
+      String url = String.format("/stylist/%d", stylist.getId());
       response.redirect(url);
       return null;
     });

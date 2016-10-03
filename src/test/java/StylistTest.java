@@ -82,9 +82,9 @@ public class StylistTest {
   }
 
   @Test
-  public void update_updatesStylistDescription_true() {
+  public void updateDescription_updatesStylistDescription_true() {
     stylist.save();
-    stylist.update("Blunt bangs");
+    stylist.updateDescription("Blunt bangs");
     assertEquals("Blunt bangs", Stylist.find(stylist.getId()).getDescription());
   }
 
@@ -94,6 +94,15 @@ public class StylistTest {
     int stylistId = stylist.getId();
     stylist.delete();
     assertEquals(null, Stylist.find(stylistId));
+  }
+
+  @Test
+  public void getOrphanedClients_retrievesListOfClientsWhoseStylistIdsAreZero_true() {
+    stylist.save();
+    Client client = new Client("Boxer", "Bowlcut trim every 2 weeks", stylist.getId());
+    client.save();
+    stylist.delete();
+    assertTrue(Stylist.getOrphanedClients().contains(client));
   }
 
 }

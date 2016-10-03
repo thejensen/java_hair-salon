@@ -5,13 +5,16 @@
   </div>
 #end
 
+#if($orphanedClients)
+  <div
+
 <h1>Our Stylists</h1>
 <hr>
 <div class="row">
   #foreach ($stylist in $stylists)
     <div class="col-xs-6 col-md-3">
       <a href="/stylist/$stylist.getId()" class="thumbnail">
-        <h4>$stylist.getName()</h4></li>
+        <h4>$stylist.getName()</h4>
       </a>
     </div>
   #end

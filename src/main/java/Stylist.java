@@ -71,23 +71,33 @@ public class Stylist {
     }
   }
 
-  public void update(String description) {
+  public void updateDescription(String description) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE stylists SET description = :description WHERE id = :id";
+      String sql = "UPDATE stylists SET description=:description WHERE id=:id";
       con.createQuery(sql)
         .addParameter("description", description)
-        .addParameter("id", id)
+        .addParameter("id", this.id)
         .executeUpdate();
     }
   }
 
   public void delete() {
     try(Connection con = DB.sql2o.open()) {
-    String sql = "DELETE FROM stylists WHERE id = :id;";
+    String sql = "UPDATE clients SET stylist_id=0 WHERE stylist_id=:id; DELETE FROM stylists WHERE id=:id;";
     con.createQuery(sql)
-      .addParameter("id", id)
+      .addParameter("id", this.id)
       .executeUpdate();
     }
   }
+
+  public static List<Client> getOrphanedClients(){
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM clients WHERE stylist_id=0";
+      return con.createQuery(sql)
+        .executeAndFetch(Client.class);
+    }
+  }
+
+
 
 }
