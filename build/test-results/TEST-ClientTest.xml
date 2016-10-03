@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ClientTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-10-03T05:47:26" hostname="MacBook-Pro.domain" time="0.287">
+<testsuite name="ClientTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-10-03T06:02:27" hostname="MacBook-Pro.domain" time="0.31">
   <properties/>
-  <testcase name="save_savesObjectToDatabase_true" classname="ClientTest" time="0.138"/>
+  <testcase name="save_savesObjectToDatabase_true" classname="ClientTest" time="0.155"/>
   <testcase name="client_instantiatesCorrectly_true" classname="ClientTest" time="0.007"/>
-  <testcase name="getDescription_returnsDescriptionOfClient_String" classname="ClientTest" time="0.008"/>
-  <testcase name="all_returnsAllInstancesOfClient_true" classname="ClientTest" time="0.03"/>
-  <testcase name="getName_returnsNameOfClient_String" classname="ClientTest" time="0.005"/>
+  <testcase name="getDescription_returnsDescriptionOfClient_String" classname="ClientTest" time="0.009"/>
+  <testcase name="all_returnsAllInstancesOfClient_true" classname="ClientTest" time="0.031"/>
+  <testcase name="getName_returnsNameOfClient_String" classname="ClientTest" time="0.007"/>
   <testcase name="getId_returnsIdOfClient_true" classname="ClientTest" time="0.013"/>
   <testcase name="equals_returnsTrueIfPropertiesAreTheSame_true" classname="ClientTest" time="0.006"/>
-  <testcase name="delete_deletesClient_true" classname="ClientTest" time="0.024"/>
-  <testcase name="find_returnsClientWithSameId_secondClient" classname="ClientTest" time="0.021"/>
+  <testcase name="delete_deletesClient_true" classname="ClientTest" time="0.025"/>
+  <testcase name="find_returnsClientWithSameId_secondClient" classname="ClientTest" time="0.023"/>
   <testcase name="getStylistId_returnsStylistId_int" classname="ClientTest" time="0.006"/>
-  <testcase name="update_updatesDescriptionForClient_true" classname="ClientTest" time="0.025"/>
+  <testcase name="update_updatesDescriptionForClient_true" classname="ClientTest" time="0.026"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

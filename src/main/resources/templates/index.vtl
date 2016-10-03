@@ -5,8 +5,18 @@
   </div>
 #end
 
-#if($orphanedClients)
-  <div
+#if($disassociatedClients)
+<h3>Clients to be assigned:</h3>
+<div class="row">
+  #foreach ($disassociatedClient in $disassociatedClients)
+    <div class="col-xs-6 col-md-3">
+      <a href="/client/$disassociatedClient.getId()" class="thumbnail">
+        <h4>$disassociatedClient.getName()</h4>
+      </a>
+    </div>
+  #end
+    </div>
+#end
 
 <h1>Our Stylists</h1>
 <hr>
