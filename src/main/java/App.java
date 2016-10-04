@@ -136,7 +136,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Client client = Client.find(Integer.parseInt(request.params("id")));
       Stylist stylist = Stylist.find(client.getStylistId());
-      model.put("success-delete", client.getName());
+      // model.put("success-delete", client.getName());
       client.delete();
       String url = String.format("/");
       response.redirect(url);
