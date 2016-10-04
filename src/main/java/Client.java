@@ -69,7 +69,17 @@ public class Client {
     }
   }
 
-  public void update(String description) {
+  public void updateName(String name) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE clients SET name=:name WHERE id=:id";
+      con.createQuery(sql)
+        .addParameter("id", id)
+        .addParameter("name", name)
+        .executeUpdate();
+    }
+  }
+
+  public void updateDescription(String description) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE clients SET description=:description WHERE id=:id";
       con.createQuery(sql)
@@ -78,6 +88,7 @@ public class Client {
         .executeUpdate();
     }
   }
+
 
   public void delete() {
     try(Connection con = DB.sql2o.open()) {
@@ -88,7 +99,7 @@ public class Client {
     }
   }
 
-  public void addStylist(int stylistId) {
+  public void updateStylist(int stylistId) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE clients SET stylist_id=:stylistId WHERE id=:id;";
       con.createQuery(sql)

@@ -73,9 +73,16 @@ public class ClientTest {
   }
 
   @Test
+  public void update_updatesNameForClient_true() {
+    client.save();
+    client.updateName("Gabby");
+    assertEquals("Gabby", Client.find(client.getId()).getName());
+  }
+
+  @Test
   public void update_updatesDescriptionForClient_true() {
     client.save();
-    client.update("A new do, don't care what");
+    client.updateDescription("A new do, don't care what");
     assertEquals("A new do, don't care what", Client.find(client.getId()).getDescription());
   }
 
@@ -86,4 +93,13 @@ public class ClientTest {
     client.delete();
     assertEquals(null, Client.find(clientId));
   }
+
+  @Test
+  public void updateStylist_updatesClientsAssignedStylistInDatabase_int() {
+    client.save();
+    Stylist stylist = new Stylist("Xena", "Straightforward, elegant style");
+    client.updateStylist(stylist.getId());
+    assertEquals(stylist.getId(), Client.find(client.getId()).getStylistId());
+  }
+
 }

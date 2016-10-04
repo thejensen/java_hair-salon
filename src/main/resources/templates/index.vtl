@@ -5,13 +5,20 @@
   </div>
 #end
 
-#if($disassociatedClients)
+<!-- #if($success-delete)
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    $success-delete's info has been deleted. -Hades
+  </div>
+#end -->
+
+#if($unassociatedClients.size()>0)
 <h3>Clients to be assigned:</h3>
 <div class="row">
-  #foreach ($disassociatedClient in $disassociatedClients)
+  #foreach ($unassociatedClient in $unassociatedClients)
     <div class="col-xs-6 col-md-3">
-      <a href="/client/$disassociatedClient.getId()" class="thumbnail">
-        <h4>$disassociatedClient.getName()</h4>
+      <a href="/client/$unassociatedClient.getId()/update" class="thumbnail">
+        <h4>$unassociatedClient.getName()</h4>
       </a>
     </div>
   #end

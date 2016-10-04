@@ -13,7 +13,7 @@ public class App {
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("stylists", Stylist.all());
-      model.put("disassociatedClients", Stylist.getOrphanedClients());
+      model.put("unassociatedClients", Stylist.getUnassociatedClients());
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -48,6 +48,9 @@ public class App {
       Stylist stylist = Stylist.find(Integer.parseInt(request.params("id")));
       String description = request.queryParams("description");
       stylist.updateDescription(description);
+      String name = request.queryParams("name");
+      stylist.updateName(name);
+      model.put("success-edit", stylist.getName());
       String url = String.format("/stylist/%d", stylist.getId());
       response.redirect(url);
       return null;
@@ -105,8 +108,9 @@ public class App {
 
     get("/client/:id/update", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      Stylist stylist  = Stylist.find(Integer.parseInt(request.params("stylist_id")));
       Client client  = Client.find(Integer.parseInt(request.params("id")));
+      Stylist stylist = Stylist.find(client.getStylistId());
+      model.put("stylists", Stylist.all());
       model.put("stylist", stylist);
       model.put("client", client);
       model.put("template", "templates/client-update.vtl");
@@ -117,9 +121,13 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Client client = Client.find(Integer.parseInt(request.params("id")));
       String description = request.queryParams("description");
+      String name = request.queryParams("name");
+      int stylistId = Integer.parseInt(request.queryParams("stylistId"));
       Stylist stylist = Stylist.find(client.getStylistId());
-      client.update(description);
-      String url = String.format("/stylist/%d", stylist.getId());
+      client.updateDescription(description);
+      client.updateName(name);
+      client.updateStylist(stylistId);
+      String url = String.format("/stylist/%d", stylistId);
       response.redirect(url);
       return null;
     });
@@ -128,8 +136,9 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Client client = Client.find(Integer.parseInt(request.params("id")));
       Stylist stylist = Stylist.find(client.getStylistId());
+      model.put("success-delete", client.getName());
       client.delete();
-      String url = String.format("/stylist/%d", stylist.getId());
+      String url = String.format("/");
       response.redirect(url);
       return null;
     });

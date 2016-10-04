@@ -71,6 +71,16 @@ public class Stylist {
     }
   }
 
+  public void updateName(String name) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE stylists SET name=:name WHERE id=:id";
+      con.createQuery(sql)
+        .addParameter("name", name)
+        .addParameter("id", this.id)
+        .executeUpdate();
+    }
+  }
+
   public void updateDescription(String description) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE stylists SET description=:description WHERE id=:id";
@@ -90,7 +100,7 @@ public class Stylist {
     }
   }
 
-  public static List<Client> getOrphanedClients(){
+  public static List<Client> getUnassociatedClients(){
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM clients WHERE stylist_id=0";
       return con.createQuery(sql)

@@ -12,18 +12,13 @@
     $success-add's info has been added. -Xena
   </div>
 #end
-#if($success-update)
+#if($success-edit)
 <div class="alert alert-info alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  $success-update's info has been updated. -Gabrielle
+  $success-edits's info has been updated. -Gabrielle
 </div>
 #end
-#if($success-delete)
-  <div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    $success-delete's info has been deleted. -Hades
-  </div>
-#end
+
 
 <h1>Client List</h1>
 <h3><a href="/stylist/$stylist.getId()/client/new">Add Client</a></h3>
@@ -34,7 +29,7 @@
       <ul>
         <li><h4>$client.getName()</a></h4></li>
         <li>Requests | $client.getDescription()</li>
-        <li><a href="/stylist/$stylist.getId()/client/$client.getId()/update">Update $client.getName()'s Details</a></li>
+        <li><a href="/client/$client.getId()/update">Update $client.getName()'s Details</a></li>
       </ul>
     </div>
   #end
