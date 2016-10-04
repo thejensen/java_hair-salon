@@ -13,6 +13,7 @@ _**The owner of the hair salon may add a list of stylists, and for each stylist,
 _To run app locally:_
 * _Make sure you have the Java Development Kit (JDK) and a Java Runtime Environment (JRE) installed._
 * _Install Gradle_
+
 * _Clone https://github.com/thejensen/java_hair-salon to your desktop_
 * _In terminal, navigate to java_hair-salon_
 
@@ -23,6 +24,7 @@ _Next, recreate the hair-salon database in PSQL:_
 * _\c hair_salon_
 * _CREATE TABLE stylists (id serial PRIMARY KEY, name varchar, description varchar);_
 * _CREATE TABLE clients (id serial PRIMARY KEY, name varchar, description varchar, stylist_id int);_
+* _CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
 
 _Finally, we can run the app by..._
 * _In a new terminal tab (or "ctrl c" out of psql) execute $gradle run_
